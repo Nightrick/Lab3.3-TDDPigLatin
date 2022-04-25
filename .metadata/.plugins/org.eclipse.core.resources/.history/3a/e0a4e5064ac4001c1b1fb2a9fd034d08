@@ -1,0 +1,50 @@
+public class PigLatin {
+
+
+	public static String translate(String string1) {
+		
+		
+		//Split input into a string array consisting of individual words
+		String[] translationArray = string1.split(" ");
+		
+		int index;
+		
+		for(int i = 0; i < translationArray.length; i++) {
+			if(translationArray[i].charAt(0) == 'a' || translationArray[i].charAt(0) == 'e' || translationArray[i].charAt(0) == 'i' || translationArray[i].charAt(0) == 'o' || translationArray[i].charAt(0) == 'u'){
+				translationArray[i].concat("way"); 	
+			} else {
+				index = -1;
+				for(int j = 0; j < translationArray[i].length(); j++) {
+					if(vowelChecker(translationArray[i].charAt(j))) {
+						index = i;
+						break;
+					}
+				}
+				if (index > 0) {
+					return translationArray[i].substring(index) + translationArray[i].substring(0, index) + "ay";
+				} else {
+					return translationArray[i];
+				}
+			}
+				
+			}
+		String pigLatinString = translationArray.toString();
+		
+		return pigLatinString;
+		}
+	
+		public static boolean vowelChecker(char c) {
+			if(c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+				return true;
+			} else {
+				return false;
+			}
+		}
+		
+		
+		
+		
+	
+}
+
+

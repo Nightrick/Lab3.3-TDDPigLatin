@@ -1,0 +1,41 @@
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class PigLatinPrompt {
+
+	public static void main(String[] args) {
+		Scanner scnr = new Scanner(System.in);
+		
+		String userContinues ="y";
+		boolean invalidInput = true;
+		boolean notYOrN = true;
+		
+		
+		do {
+		System.out.print("Hello there. Please enter a word or sentence you would like translated into Pig Latin: ");
+		String stringToTranslate = scnr.nextLine().toLowerCase();
+		System.out.println("You entered: " + stringToTranslate);
+		
+		System.out.println("Your string in Pig Latin is: " + PigLatin.translate(stringToTranslate));
+		
+		while(invalidInput)
+		try {
+		while (notYOrN)	
+		System.out.print("Would you like to translate another string? (y/n): ");
+		userContinues = scnr.next().toLowerCase();
+		if(!(userContinues.equals("y") || userContinues.equals("n"))) {
+			throw new IllegalArgumentException("That isn't a y or n. Try again.");
+		} else {
+			notYOrN = false;
+		}
+		
+		invalidInput = false;
+		} catch (InputMismatchException e) {
+			System.out.println("That wasn't a valid choice. Try again.");
+		}
+		} while(userContinues.equals("y"));
+		
+
+	}
+
+}

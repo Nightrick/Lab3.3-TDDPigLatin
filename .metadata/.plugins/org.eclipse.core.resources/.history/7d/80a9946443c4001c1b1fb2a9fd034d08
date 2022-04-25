@@ -1,0 +1,33 @@
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class PigLatin {
+
+	public static void main(String[] args) {
+		
+		Scanner scnr = new Scanner(System.in);
+		
+		
+		
+		
+		System.out.print("Hello there. ");
+		
+		
+		System.out.print("Please enter a word or sentence you would like translated into Pig Latin: ");
+		String stringToTranslate = scnr.nextLine().toLowerCase();
+		System.out.println("You entered: " + stringToTranslate);
+		
+		translate(stringToTranslate);
+
+	}
+	
+	public static String translate(String string1) {
+		
+		String pigLatinString = "";
+		
+		
+		
+		return pigLatinString;
+	}
+
+}

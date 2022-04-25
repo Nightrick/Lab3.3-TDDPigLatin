@@ -1,0 +1,16 @@
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class PigLatinTest {
+
+	@Test
+	void vowelTests() {
+		assertEquals("appleway", PigLatin.translate("apple"));
+		assertEquals("elseway", PigLatin.translate("else"));
+		assertEquals("iodineway", PigLatin.translate("iodine"));
+		assertEquals("ordinaryway", PigLatin.translate("ordinary"));
+		assertEquals("underway", PigLatin.translate("under"));
+	}
+
+}
